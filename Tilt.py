@@ -1,5 +1,3 @@
-import dbus
-
 import os
 import time
 import subprocess
@@ -57,9 +55,3 @@ while True:
                         shell=True,
                         executable='/bin/bash',
                         stdout=open(os.devnull, 'wb'))
-
-
-# sensor_proxy.ClaimLight()
-# time.sleep(1)
-# print(str(sensor_proxy.LightLevel))
-# sensor_proxy.ReleaseLight()
