@@ -14,17 +14,17 @@ __LEFT__ = '0 -1 1 1 0 0 0 0 1'
 __NORMAL__ = '1 0 0 0 1 0 0 0 1'
 __INVERTED__ = '-1 0 1 0 -1 1 0 0 1'
 
-# TODO: FIGURE OUT HOW TO USE xinput TO LOAD THIS INSTEAD
+# TODO: Figure out how to slap xinput data into here instead of hardcoding. Currently doesn't work for USB mice, nor portable.
 __DEVICE_LIST__ = ['SYNA2B31:00 06CB:7F8B Touchpad', 'Wacom HID 5113 Finger touch', 'Wacom HID 5113 Pen stylus',
-                   'Wacom HID 5113 Pen eraser', 'SYNA2B31:00 06CB:7F8B Mouse', 'Logitech USB Optical Mouse']
+                   'Wacom HID 5113 Pen eraser', 'SYNA2B31:00 06CB:7F8B Mouse']
 
 __COMMANDS_LEFT__ = ["xrandr -o left"]
 __COMMANDS_RIGHT__ = ["xrandr -o right"]
 __COMMANDS_NORMAL__ = ["xrandr -o normal"]
 __COMMANDS_INVERTED__ = ["xrandr -o inverted"]
 
+# Pre-fills the lists of commands to activate for each orientation
 for device in __DEVICE_LIST__:
-    # Commands
     __COMMANDS_NORMAL__.append("xinput --set-prop \"" + device +
                                "\" --type=float \"Coordinate Transformation Matrix\" " + __NORMAL__)
     __COMMANDS_LEFT__.append("xinput --set-prop \"" + device +
