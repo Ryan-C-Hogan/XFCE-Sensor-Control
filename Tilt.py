@@ -6,7 +6,6 @@ from pydbus import SystemBus
 
 bus = SystemBus()
 sensor_proxy = bus.get('net.hadess.SensorProxy')
-help(sensor_proxy)
 
 # Transformation matrices for input
 __RIGHT__ = '0 1 0 -1 0 1 0 0 1'
