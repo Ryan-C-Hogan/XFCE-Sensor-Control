@@ -24,7 +24,7 @@ def get_pointer_devices():
 
     i = 1
     while "Virtual core keyboard" != devices[i]:
-        device_list.append(devices[i])
+        device_list_.append(devices[i])
         i += 1
 
     return device_list_
@@ -56,7 +56,7 @@ def check_new_devices(current_device_list):
     if len(devices) != len(current_device_list):
         return True, devices
     else:
-        return False
+        return False, []
 
 
 device_list = get_pointer_devices()
