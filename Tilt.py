@@ -1,27 +1,3 @@
-import os
-import time
-import subprocess
-
-from pydbus import SystemBus
-
-bus = SystemBus()
-sensor_proxy = bus.get('net.hadess.SensorProxy')
-
-# Transformation matrices for input
-_right = '0 1 0 -1 0 1 0 0 1'
-_left = '0 -1 1 1 0 0 0 0 1'
-_normal = '1 0 0 0 1 0 0 0 1'
-_inverted = '-1 0 1 0 -1 1 0 0 1'
-
-
-def get_pointer_devices():
-    devices = subprocess.check_output("xinput --list --name-only",
-                                      shell=True,
-                                      executable='/bin/sh')
-
-    devices = devices.decode('utf-8').split("\n")
-    device_list_ = []
-
 #!/usr/bin/python3
 import os
 import time
